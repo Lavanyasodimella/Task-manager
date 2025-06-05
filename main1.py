@@ -1,6 +1,7 @@
 from flask import *
 from databases import login_data,upload_data,add_record,incompleted_tasks,updateprogress,terminateprogress,historytable
 from sentemail import send_notification
+from flask import Flask, render_template
 app = Flask(__name__)
 main_email = "abc"
 @app.route('/',methods=['GET','POST'])
@@ -15,8 +16,8 @@ def login():
             records = incompleted_tasks(main_email)
             return render_template("taskmanager.html",records=records)
         else:
-            return render_template('login.html',error="Invalid Details!")
-    return render_template('login.html')
+            return render_template('Login.html',error="Invalid Details!")
+    return render_template('Login.html')
 
 @app.route('/signup',methods=['GET','POST'])
 def signup():
