@@ -16,8 +16,8 @@ def login():
             records = incompleted_tasks(main_email)
             return render_template("taskmanager.html",records=records)
         else:
-            return render_template('Login.html',error="Invalid Details!")
-    return render_template('Login.html')
+            return render_template('login.html',error="Invalid Details!")
+    return render_template('login.html')
 
 @app.route('/signup',methods=['GET','POST'])
 def signup():
