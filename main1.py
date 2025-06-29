@@ -2,6 +2,10 @@ from flask import *
 from databases import login_data,upload_data,add_record,incompleted_tasks,updateprogress,terminateprogress,historytable
 from sentemail import send_notification
 from flask import Flask, render_template
+from dotenv import load_dotenv
+import os
+load_dotenv()
+app.secret_key = os.getenv("81ee0349386fb8d05ae1aa345b1d77a8")
 app = Flask(__name__)
 main_email = "abc"
 @app.route('/',methods=['GET','POST'])
